@@ -1,9 +1,14 @@
 <!DOCTYPE html>
     {% extends "basic_app/base.html" %}
+    {% load my_extras %}
+    <!-- to use your custom tags, you must load them in. -->
     {% block body_block %}
-        <h1>WELCOME TO INDEX</h1>
+        <!-- <h1>WELCOME TO INDEX</h1> -->
         <h2>This is index.html page showing.</h2>
         <!-- <a href="{% url 'basic_app:relative' %}">RELATIVE</a>
         <a href="{% url 'basic_app:other' %}">OTHER</a>
         <a href="{% url 'admin:index' %}">ADMIN</a> -->
+        <h1>{{ text|cutt:'hello' }} {{ number|add:"99" }}</h1>
+            <!-- {{ contextvar|filter:"parameter"} -->
+            <!-- these are called template filters - go see the documentation for more -->
     {% endblock %}
