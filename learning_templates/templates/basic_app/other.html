@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>WELCOME TO OTHER</h1>
-    <a href="{% url 'basic_app:relative' %}">RELATIVE</a>
+{% extends "basic_app/base.html" %}
+<!-- always of form: extends "template_directory_path/file_name.html" -->
+    <!-- <a href="{% url 'basic_app:relative' %}">RELATIVE</a>
     <a href="{% url 'index' %}">HOME</a>
-    <a href="{% url 'admin:index' %}">ADMIN</a>
+    <a href="{% url 'admin:index' %}">ADMIN</a> -->
         <!-- note that this tag uses the convention: app_name:path_name, both of which are defined in the app urls file -->
-</body>
-</html>
+    {% block body_block %}
+        <!-- what is between these blocks will be in the place of body_block on base.html, the file we are extending
+            this one with.
+        -->
+        <h1>WELCOME TO OTHER!</h1>
+        <h2>This is an example of template inheritance!</h2>
+    {% endblock %}
