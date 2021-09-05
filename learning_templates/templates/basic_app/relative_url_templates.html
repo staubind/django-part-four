@@ -8,5 +8,10 @@
 </head>
 <body>
     <h1>WELCOME TO RELATIVE URL TEMPLATES</h1>
+    <a href="{% url 'basic_app:other' %}">OTHER</a>
+    <a href="{% url 'index' %}">HOME</a>
+    <a href="{% url 'admin:index' %}">ADMIN</a>
+    <!-- note that this tag uses the convention: app_name:path_name, both of which are defined in the app urls file -->
+    <!-- if the routes are defined in teh project root, just use the name (as defined in the path) of the path. -->
 </body>
 </html>
